@@ -23,8 +23,30 @@ public class RocketShip {
      of //...\\ on either side.
      */
     public static void printNoseCone() {
-        // your code goes here.
-        System.out.println("A nose cone should be here.");
+
+        // Loop through rows
+        for (int row = 0; row <= ROCKET_SIZE + 1; row ++) {
+            
+            // Begin row blank space
+            for ( int blank = 1; blank <= ROCKET_SIZE + 2 - row; blank ++ ) {
+                System.out.print( " " ); 
+            }
+            // Print leading /
+            for (int line = 0; line <= row; line ++) {
+                System.out.print("/");
+            }
+            // Print *
+            System.out.print("**");
+            // Print trailing \
+            for (int line = 0; line <= row; line ++) {
+                System.out.print("\\");
+            }
+            // Close row blank space
+            for( int blank = 1; blank <= ROCKET_SIZE + 2 - row; blank ++ ) {
+                System.out.print( " " ); 
+            }
+            System.out.println(" ");
+        }
     }
     
     /**
@@ -47,26 +69,20 @@ public class RocketShip {
      */
     public static void printDiamondTop() {
         // Loop through total rows
-        for (int row = 0; row < ROCKET_SIZE * 2; row ++) {
+        for (int row = 0; row < 2; row ++) {
 
             // Begin row
             System.out.print("|");
 
+            int dots = 2 * ROCKET_SIZE - 2;
             // print leading dots
             for (int i = 0; i < dots; i ++) {
                 System.out.print(".");
             }
 
-            int triangles = row + 1;
             // print triangles
-            for(int i = 0; i < triangles; i ++) {
-                System.out.print("/\\");
-            }
 
             // print middle dots
-            for (int i = 0; i < dots; i ++) {
-                System.out.print(".");
-            }
 
             // print second triangles
 
