@@ -1,7 +1,7 @@
 // Your header comment goes here.
 
 public class RocketShip {
-    public static final int ROCKET_SIZE = 3;
+    public static final int ROCKET_SIZE = 4;
     
     public static void main( String[] args ) {
         printNoseCone();
@@ -24,28 +24,30 @@ public class RocketShip {
      */
     public static void printNoseCone() {
 
+        int space = (ROCKET_SIZE * 2);
         // Loop through rows
-        for (int row = 0; row <= ROCKET_SIZE + 1; row ++) {
+        for (int row = 1; row <= space; row ++) {
             
             // Begin row blank space
-            for ( int blank = 1; blank <= ROCKET_SIZE + 2 - row; blank ++ ) {
+            for ( int blank = 0; blank < space - row; blank ++ ) {
                 System.out.print( " " ); 
             }
 
             // Print leading /
-            for (int line = 0; line <= row; line ++) {
+            for (int line = 0; line < row; line ++) {
                 System.out.print("/");
             }
 
             // Print **
             System.out.print("**");
+
             // Print trailing \
-            for (int line = 0; line <= row; line ++) {
+            for (int line = 0; line < row; line ++) {
                 System.out.print("\\");
             }
 
             // Close row blank space
-            for( int blank = 1; blank <= ROCKET_SIZE + 2 - row; blank ++ ) {
+            for( int blank = 0; blank <= space - row; blank ++ ) {
                 System.out.print( " " ); 
             }
 
@@ -79,7 +81,7 @@ public class RocketShip {
             System.out.print("|");
 
             // print leading dots
-            int dots = (ROCKET_SIZE * 2 - 4) - row;
+            int dots = ROCKET_SIZE - row - 1;
             for (int j = 0; j < dots; j ++) {
                 System.out.print(".");
             }
@@ -127,7 +129,7 @@ public class RocketShip {
             }
 
             // print triangles
-            for (int i = 3; i > row; i --) {
+            for (int i = ROCKET_SIZE; i > row; i --) {
                 System.out.print("\\/");
             }
 
@@ -138,7 +140,7 @@ public class RocketShip {
             }
 
             // print second triangles
-            for(int i = 3; i > row; i --) {
+            for(int i = ROCKET_SIZE; i > row; i --) {
                 System.out.print("\\/");
             }
 
