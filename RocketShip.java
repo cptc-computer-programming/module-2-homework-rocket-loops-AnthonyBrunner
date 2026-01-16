@@ -26,7 +26,7 @@ public class RocketShip {
 
         int space = (ROCKET_SIZE * 2);
         // Loop through rows
-        for (int row = 1; row <= space; row ++) {
+        for (int row = 2; row <= space; row ++) {                           // Needed to set row to 2 and increase line values to int 1 in order to produce desired results
             
             // Begin row blank space
             for ( int blank = 0; blank < space - row; blank ++ ) {
@@ -34,7 +34,7 @@ public class RocketShip {
             }
 
             // Print leading /
-            for (int line = 0; line < row; line ++) {
+            for (int line = 1; line < row; line ++) {
                 System.out.print("/");
             }
 
@@ -42,7 +42,7 @@ public class RocketShip {
             System.out.print("**");
 
             // Print trailing \
-            for (int line = 0; line < row; line ++) {
+            for (int line = 1; line < row; line ++) {
                 System.out.print("\\");
             }
 
