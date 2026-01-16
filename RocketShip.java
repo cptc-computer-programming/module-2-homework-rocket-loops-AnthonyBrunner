@@ -1,7 +1,7 @@
 // Your header comment goes here.
 
 public class RocketShip {
-    public static final int ROCKET_SIZE = 4;
+    public static final int ROCKET_SIZE = 2;
     
     public static void main( String[] args ) {
         printNoseCone();
@@ -29,7 +29,7 @@ public class RocketShip {
         for (int row = 2; row <= space; row ++) {                           // Needed to set row to 2 and increase line values to int 1 in order to produce desired results
             
             // Begin row blank space
-            for ( int blank = 0; blank < space - row; blank ++ ) {
+            for ( int blank = 0; blank < space - row + 1; blank ++ ) {      // Needed to add + 1 to my end parameters in order to fix the nozzle centering issue
                 System.out.print( " " ); 
             }
 
@@ -44,11 +44,6 @@ public class RocketShip {
             // Print trailing \
             for (int line = 1; line < row; line ++) {
                 System.out.print("\\");
-            }
-
-            // Close row blank space
-            for( int blank = 0; blank <= space - row; blank ++ ) {
-                System.out.print( " " ); 
             }
 
             System.out.println(" ");
