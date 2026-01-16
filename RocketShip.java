@@ -31,20 +31,24 @@ public class RocketShip {
             for ( int blank = 1; blank <= ROCKET_SIZE + 2 - row; blank ++ ) {
                 System.out.print( " " ); 
             }
+
             // Print leading /
             for (int line = 0; line <= row; line ++) {
                 System.out.print("/");
             }
-            // Print *
+
+            // Print **
             System.out.print("**");
             // Print trailing \
             for (int line = 0; line <= row; line ++) {
                 System.out.print("\\");
             }
+
             // Close row blank space
             for( int blank = 1; blank <= ROCKET_SIZE + 2 - row; blank ++ ) {
                 System.out.print( " " ); 
             }
+
             System.out.println(" ");
         }
     }
@@ -57,10 +61,10 @@ public class RocketShip {
     public static void printBody() {
         printEdge();
         printDiamondTop();
-        // printDiamondBottom();        
-        // printEdge();
-        // printDiamondBottom();        
-        // printDiamondTop();       
+        printDiamondBottom();        
+        printEdge();
+        printDiamondBottom();        
+        printDiamondTop();       
         printEdge();        
     }
     
@@ -69,37 +73,83 @@ public class RocketShip {
      */
     public static void printDiamondTop() {
         // Loop through total rows
-        for (int row = 0; row < 2; row ++) {
+        for (int row = 0; row < ROCKET_SIZE; row ++) {
 
             // Begin row
             System.out.print("|");
 
-            int dots = 2 * ROCKET_SIZE - 2;
             // print leading dots
-            for (int i = 0; i < dots; i ++) {
+            int dots = (ROCKET_SIZE * 2 - 4) - row;
+            for (int j = 0; j < dots; j ++) {
                 System.out.print(".");
             }
 
+            int triangles = row + 1;
             // print triangles
+            for(int i = 0; i < triangles; i ++) {
+                System.out.print("/\\");
+            }
 
             // print middle dots
+            int middle = (dots * 2);
+            for (int j = 0; j < middle; j ++) {
+                System.out.print(".");
+            }
 
             // print second triangles
+            for(int i = 0; i < triangles; i ++) {
+                System.out.print("/\\");
+            }
 
             // print trailing dots 
+            for (int j = 0; j < dots; j ++) {
+                System.out.print(".");
+            }
 
             // close row
             System.out.println("|");
         }
-        System.out.println("A diamond top should be here.");
     }
     
     /**
      Print the bottom half of two diamonds between vertical lines.
      */
     public static void printDiamondBottom() {
-        // your code goes here.
-        System.out.println("A diamond bottom should be here.");
+        // Loop through total rows
+        for (int row = 0; row < ROCKET_SIZE; row ++) {
+
+            // Begin row
+            System.out.print("|");
+
+            // print leading dots
+            for (int i = 0; i < row; i ++) {
+                System.out.print(".");
+            }
+
+            // print triangles
+            for (int i = 3; i > row; i --) {
+                System.out.print("\\/");
+            }
+
+            // print middle dots
+            int middle = row * 2;
+            for (int i = 0; i < middle; i ++) {
+                System.out.print(".");
+            }
+
+            // print second triangles
+            for(int i = 3; i > row; i --) {
+                System.out.print("\\/");
+            }
+
+            // print trailing dots 
+            for (int i = 0; i < row; i ++) {
+                System.out.print(".");
+            }
+
+            // close row
+            System.out.println("|");
+        }
     }
     /**
       Print +=*=*=*...=+ to fit the width of the rocket.
@@ -112,4 +162,5 @@ public class RocketShip {
         }
         System.out.println("+");
     }
+    
 }
