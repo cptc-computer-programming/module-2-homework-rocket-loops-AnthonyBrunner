@@ -34,7 +34,7 @@ public class RocketShip {
      */
     public static void printBody() {
         printEdge();
-        // printDiamondTop();
+        printDiamondTop();
         // printDiamondBottom();        
         // printEdge();
         // printDiamondBottom();        
@@ -46,7 +46,35 @@ public class RocketShip {
      Print the top half of two diamonds between vertical lines.
      */
     public static void printDiamondTop() {
-        // your code goes here.
+        // Loop through total rows
+        for (int row = 0; row < ROCKET_SIZE * 2; row ++) {
+
+            // Begin row
+            System.out.print("|");
+
+            // print leading dots
+            for (int i = 0; i < dots; i ++) {
+                System.out.print(".");
+            }
+
+            int triangles = row + 1;
+            // print triangles
+            for(int i = 0; i < triangles; i ++) {
+                System.out.print("/\\");
+            }
+
+            // print middle dots
+            for (int i = 0; i < dots; i ++) {
+                System.out.print(".");
+            }
+
+            // print second triangles
+
+            // print trailing dots 
+
+            // close row
+            System.out.println("|");
+        }
         System.out.println("A diamond top should be here.");
     }
     
