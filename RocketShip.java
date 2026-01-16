@@ -6,7 +6,7 @@
 //  that ROCKET_SIZE is equal to.
 
 public class RocketShip {
-    public static final int ROCKET_SIZE = 4;
+    public static final int ROCKET_SIZE = 3;
     
     public static void main( String[] args ) {
         printNoseCone();
@@ -109,7 +109,7 @@ public class RocketShip {
             }
 
             // close row
-            System.out.println("|");                                    // I use the println statements at the end of my inner loop to "close" out the current row and thus it will start the next row on a new line
+            System.out.println("|");                                       // I use the println statements at the end of my inner loop to "close" out the current row and thus it will start the next row on a new line
         }
     }
     
@@ -159,7 +159,7 @@ public class RocketShip {
     public static void printEdge() {
         System.out.print("+");
 
-        for (int i = 0; i < ROCKET_SIZE * 2; i ++) {                        // I could replace my logic in the end parameter "< ROCKET_SIZE * 2" by calling my previous equation "space" utilized in the NoseCone logic.
+        for (int i = 0; i < ROCKET_SIZE * 2; i ++) {                        // I could replace my logic in the end parameter "< ROCKET_SIZE * 2" by calling my previous "space" utilized in the NoseCone logic.
             System.out.print("=*");                                      //     But in order to implement that, I would need to move that out of the NoseCone method and place it into out into main() which we can 
         }                                                                  //       not manipulate per this assignments requirements
         System.out.println("+");
