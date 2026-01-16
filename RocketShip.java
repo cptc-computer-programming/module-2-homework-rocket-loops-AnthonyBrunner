@@ -34,11 +34,11 @@ public class RocketShip {
      */
     public static void printBody() {
         printEdge();
-        printDiamondTop();
-        printDiamondBottom();        
-        printEdge();
-        printDiamondBottom();        
-        printDiamondTop();       
+        // printDiamondTop();
+        // printDiamondBottom();        
+        // printEdge();
+        // printDiamondBottom();        
+        // printDiamondTop();       
         printEdge();        
     }
     
@@ -61,7 +61,11 @@ public class RocketShip {
       Print +=*=*=*...=+ to fit the width of the rocket.
      */
     public static void printEdge() {
-        // your code goes here.
-        System.out.println("An edge should be here.");
+        System.out.print("+");
+
+        for (int i = 0; i < ROCKET_SIZE * 2; i ++) {
+            System.out.print("=*");
+        }
+        System.out.println("+");
     }
 }
